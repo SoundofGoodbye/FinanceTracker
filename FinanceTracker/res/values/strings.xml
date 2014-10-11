@@ -3,6 +3,12 @@
 
     <string name="app_name">FinanceTracker</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="main_screen_income_label">Income:</string>
+    <string name="main_screen_add_button_label">Add</string>
+    <string name="income_delete_method_button_label">Remove</string>
+    <string name="income_enter_method_default_string">Enter method:</string>
+    <string name="income_enter_amount_default_string">Enter amount</string>
+    <string name="enter_income_method_input_text_field_hint">Enter input method</string>
+    <string name="enter_income_amount_input_text_field_hint">Enter amount</string>
 
 </resources>
