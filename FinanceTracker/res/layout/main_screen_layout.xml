@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.example.financetracker"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -8,43 +9,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main_screen_income_label"
-        android:textSize="15sp" />
+        android:textSize="30sp" />
 
-    <!-- TODO: Extract to view class -->
-
-    <Button
-        android:id="@+id/main_screen_add_button"
+    <com.example.financetracker.views.MoneyAmountView
+        android:id="@+id/income_method_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/main_screen_income_label"
-        android:onClick="addButtonClickListener"
-        android:text="@string/main_screen_add_button_label" />
+        custom:methodType="incomeButton" />
 
-    <EditText
-        android:id="@+id/income_method_input_text_field"
+    <TextView
+        android:id="@+id/main_screen_expenses_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/main_screen_income_label"
-        android:layout_toRightOf="@+id/main_screen_add_button"
-        android:hint="@string/enter_income_method_input_text_field_hint"
-        android:inputType="textCapSentences" />
+        android:text="@string/main_screen_expenses_label"
+        android:textSize="30sp" />
 
-    <EditText
-        android:id="@+id/income_amount_input_text_field"
+    <com.example.financetracker.views.MoneyAmountView
+        android:id="@+id/expenses_method_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/main_screen_income_label"
-        android:layout_toRightOf="@+id/income_method_input_text_field"
-        android:hint="@string/enter_income_amount_input_text_field_hint"
-        android:inputType="textCapSentences" />
-
-    <!-- TODO: Extract to view class -->
-
-    <ListView
-        android:id="@+id/main_screen_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/main_screen_add_button" >
-    </ListView>
+        android:layout_below="@id/main_screen_expenses_label"
+        custom:methodType="expensesButon" />
 
 </RelativeLayout>

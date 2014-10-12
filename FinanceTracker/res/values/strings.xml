@@ -10,5 +10,6 @@
     <string name="income_enter_amount_default_string">Enter amount</string>
     <string name="enter_income_method_input_text_field_hint">Enter input method</string>
     <string name="enter_income_amount_input_text_field_hint">Enter amount</string>
+    <string name="main_screen_expenses_label">Expenses:</string>
 
 </resources>
