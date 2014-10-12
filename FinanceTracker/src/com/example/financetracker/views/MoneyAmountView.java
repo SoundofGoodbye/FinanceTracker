@@ -1,5 +1,18 @@
 package com.example.financetracker.views;
 
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+
+import com.example.financetracker.R;
 import com.example.financetracker.listeners.MainScreenAddButtonOnClickListener;
 
 public class MoneyAmountView extends LinearLayout {
@@ -49,7 +62,7 @@ public class MoneyAmountView extends LinearLayout {
 
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		inflater.inflate(R.layout.new_method_layout, this, true);
+		inflater.inflate(R.layout.money_amount_layout, this, true);
 
 		initFieldsForPassedButtonType(buttonType);
 	}

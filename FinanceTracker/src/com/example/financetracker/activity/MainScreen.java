@@ -25,7 +25,7 @@ public class MainScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_screen_layout);
-		incomeListView = (ListView) findViewById(R.id.main_screen_list_view);
+//		incomeListView = (ListView) findViewById(R.id.main_screen_list_view);
 		// TODO: Get elements from database
 		budgetsList = new ArrayList<Budget>();
 		mainScreenListAdapter = new MainScreenListAdapter(this, budgetsList);
