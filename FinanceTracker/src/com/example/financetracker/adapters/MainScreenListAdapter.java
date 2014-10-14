@@ -24,7 +24,6 @@ public class MainScreenListAdapter extends BaseAdapter {
 	public MainScreenListAdapter(Context context, List<Budget> budgetsList) {
 		this.context = context;
 		this.budgetsList = budgetsList;
-		// initListWithDummyData();
 	}
 
 	@Override
@@ -40,20 +39,6 @@ public class MainScreenListAdapter extends BaseAdapter {
 	@Override
 	public long getItemId(int position) {
 		return 0;
-	}
-
-	private void initListWithDummyData() {
-		budgetsList.add(new Budget("A", "A"));
-		budgetsList.add(new Budget("B", "B"));
-		budgetsList.add(new Budget("C", "C"));
-		budgetsList.add(new Budget("D", "D"));
-		budgetsList.add(new Budget("E", "E"));
-		budgetsList.add(new Budget("F", "F"));
-		budgetsList.add(new Budget("G", "G"));
-		budgetsList.add(new Budget("H", "H"));
-		budgetsList.add(new Budget("I", "I"));
-		budgetsList.add(new Budget("J", "J"));
-		budgetsList.add(new Budget("K", "K"));
 	}
 
 	@Override
@@ -78,10 +63,8 @@ public class MainScreenListAdapter extends BaseAdapter {
 			view.enterAmountString = (TextView) incomeMethodRowView
 					.findViewById(R.id.income_enter_amount_string);
 
-			Button removeButton = (Button) incomeMethodRowView
+			view.removeButton = (Button) incomeMethodRowView
 					.findViewById(R.id.income_delete_method);
-
-			initRemoveButton(removeButton, budgetsList.get(position));
 
 			incomeMethodRowView.setTag(view);
 		} else {
@@ -96,7 +79,26 @@ public class MainScreenListAdapter extends BaseAdapter {
 		String enterAmountString = currentBudget.getEnterAmountString();
 		view.enterAmountString.setText(enterAmountString);
 
+		initRemoveButton(view.removeButton, currentBudget);
 		return incomeMethodRowView;
+	}
+
+	/**
+	 * Sets the onclick listener to the remove button by passing the list with
+	 * all the rows along with and object that holds information about the the
+	 * current row. This information is used by the remove button to clear the
+	 * row that the button is at.
+	 * 
+	 * @param removeButton
+	 *            - the remove button in the view
+	 * @param budget
+	 *            - a budget object that holds the information from the two edit
+	 *            text views for the current row.
+	 */
+	private void initRemoveButton(Button removeButton, Budget budget) {
+		removeButton
+				.setOnClickListener(new MainScreenRemoveButtonOnClickListener(
+						budget, budgetsList, this));
 	}
 
 	private static class ViewHolder {
@@ -104,19 +106,7 @@ public class MainScreenListAdapter extends BaseAdapter {
 		public TextView enterMethodString;
 
 		public TextView enterAmountString;
-	}
 
-	private void initRemoveButton(Button removeButton, Budget budget) {
-		removeButton
-				.setOnClickListener(new MainScreenRemoveButtonOnClickListener(
-						budget, budgetsList, this));
-
-		// (new OnClickListener() {
-		// @Override
-		// public void onClick(View v) {
-		// budgetsList.remove(budget);
-		// notifyDataSetChanged();
-		// }
-		// });
+		public Button removeButton;
 	}
 }
