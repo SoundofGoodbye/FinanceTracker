@@ -17,8 +17,6 @@ public class MainScreenAddButtonOnClickListener implements OnClickListener {
 
 	private MainScreenListAdapter mainScreenListAdapter;
 
-	private Context context;
-
 	private ListView incomeListView;
 
 	private EditText incomeMethodInputField;
@@ -28,7 +26,6 @@ public class MainScreenAddButtonOnClickListener implements OnClickListener {
 	public MainScreenAddButtonOnClickListener(Context context,
 			ListView incomeListView, EditText incomeMethodInputField,
 			EditText incomeAmountInputField) {
-		this.context = context;
 		this.incomeListView = incomeListView;
 		this.incomeMethodInputField = incomeMethodInputField;
 		this.incomeAmountInputField = incomeAmountInputField;

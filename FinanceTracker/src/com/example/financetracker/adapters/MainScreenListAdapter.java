@@ -2,18 +2,17 @@ package com.example.financetracker.adapters;
 
 import java.util.List;
 
-import com.example.financetracker.Budget;
-import com.example.financetracker.R;
-import com.example.financetracker.listeners.MainScreenRemoveButtonOnClickListener;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.financetracker.Budget;
+import com.example.financetracker.R;
+import com.example.financetracker.listeners.MainScreenRemoveButtonOnClickListener;
 
 public class MainScreenListAdapter extends BaseAdapter {
 
@@ -50,9 +49,12 @@ public class MainScreenListAdapter extends BaseAdapter {
 			// Get a new instance of the row layout view
 			LayoutInflater inflater = LayoutInflater.from(context);
 
-			// TODO: Change null to parent view group.
+			// We pass the parent here so the android system doesn't ignore the
+			// layout parameters from the XML file. If parent is null the
+			// default parameters will be used and setting width/height etc on
+			// the child elements will not work.
 			incomeMethodRowView = inflater.inflate(
-					R.layout.income_methods_element, null);
+					R.layout.income_methods_element, parent, false);
 
 			// Hold the view objects in a ViewHolder so they can be reused
 			// instead of finding the views again. It increases performance.
