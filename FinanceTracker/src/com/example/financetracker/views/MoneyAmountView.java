@@ -45,8 +45,7 @@ public class MoneyAmountView extends LinearLayout {
 	 */
 	public MoneyAmountView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		initAttributes(context, attrs);
-		initMoneyAmountView(context);
+		initMoneyAmountView(context, attrs);
 	}
 
 	/**
@@ -74,11 +73,24 @@ public class MoneyAmountView extends LinearLayout {
 		}
 	}
 
-	private void initMoneyAmountView(Context context) {
+	/**
+	 * All initialization regarding the money amount view should be called
+	 * inside this method as it is called inside the constructor of the view.
+	 * 
+	 * @param context
+	 *            - used for initialization purposes like inflating.
+	 * @param attrs
+	 */
+	private void initMoneyAmountView(Context context, AttributeSet attrs) {
+		// First get the specified attributes from the attrs.xml file (if any).
+		initAttributes(context, attrs);
+
 		// Inflate the XML file so we can get the elements from it and also
 		// give our view a body.
 		inflateXmlToView(context);
 
+		// Get the add button by id and set it a new click listener, registered
+		// with information about the input fields that need to be created.
 		initAddButton(context);
 	}
 
@@ -90,7 +102,6 @@ public class MoneyAmountView extends LinearLayout {
 	 *            - Use the current context to get the inflater object.
 	 */
 	private void inflateXmlToView(Context context) {
-
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.money_amount_layout, this, true);

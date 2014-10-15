@@ -31,4 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/main_screen_expenses_label" />
 
+    <com.example.financetracker.views.MoneyLeftView
+        android:id="@+id/main_screen_money_left_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expenses_method_layout" />
+
 </RelativeLayout>

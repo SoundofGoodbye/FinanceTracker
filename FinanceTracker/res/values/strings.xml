@@ -3,13 +3,26 @@
 
     <string name="app_name">FinanceTracker</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Main Screen -->
+
+
+    <!-- Label for income -->
     <string name="main_screen_income_label">Income:</string>
+
+    <!-- Label for the add button -->
     <string name="main_screen_add_button_label">Add</string>
+
+    <!-- Entered income/expenses method and amount with remove button -->
     <string name="income_delete_method_button_label">Remove</string>
-    <string name="income_enter_method_default_string">Enter method:</string>
-    <string name="income_enter_amount_default_string">Enter amount</string>
     <string name="enter_income_method_input_text_field_hint">Enter input method</string>
     <string name="enter_income_amount_input_text_field_hint">Enter amount</string>
+    
     <string name="main_screen_expenses_label">Expenses:</string>
+    
+    <!-- Labels for the Money Left View -->
+    <string name="money_left">Money Left:</string>
+    <string name="money_total">Total:</string>
+    <string name="money_per_day_label">Per day:</string>
 
 </resources>

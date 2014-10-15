@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- The label that states: Money Left -->
+
+    <TextView
+        android:id="@+id/money_left_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/money_left"
+        android:textSize="30sp" />
+
+    <!-- Label that states: Total -->
+
+    <TextView
+        android:id="@+id/money_total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/money_left_label"
+        android:text="@string/money_total"
+        android:textSize="30sp" />
+
+    <!-- This will be a dynamic text which will represent the total money left -->
+
+    <TextView
+        android:id="@+id/money_total_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/money_left_label"
+        android:layout_toRightOf="@id/money_total_label"
+        android:textSize="30sp" />
+
+    <!-- Label that states: Per day until next income -->
+
+    <TextView
+        android:id="@+id/money_per_day_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/money_per_day_label"
+        android:layout_below="@id/money_total_amount"
+        android:textSize="30sp" />
+
+    <!-- A text field representing the amount of money per day the user has until his next income -->
+
+    <TextView
+        android:id="@+id/money_per_day_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/money_total_amount"
+        android:layout_toRightOf="@id/money_per_day_label"
+        android:textSize="30sp" />
+
+</RelativeLayout>
