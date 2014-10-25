@@ -14,7 +14,9 @@
     <TextView
         android:id="@+id/income_enter_method_string"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" 
+        android:layout_marginRight="20dp"
+        />
 
     <TextView
         android:id="@+id/income_enter_amount_string"

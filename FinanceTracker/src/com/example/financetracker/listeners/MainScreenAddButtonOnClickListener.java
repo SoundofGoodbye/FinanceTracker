@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.financetracker.Budget;
 import com.example.financetracker.adapters.MainScreenListAdapter;
@@ -23,6 +24,12 @@ public class MainScreenAddButtonOnClickListener implements OnClickListener {
 
 	private EditText incomeAmountInputField;
 
+	private boolean checkMethodTextNull;
+
+	private boolean checkAmountTextNull;
+
+	Context context;
+
 	public MainScreenAddButtonOnClickListener(Context context,
 			ListView incomeListView, EditText incomeMethodInputField,
 			EditText incomeAmountInputField) {
@@ -32,6 +39,7 @@ public class MainScreenAddButtonOnClickListener implements OnClickListener {
 		budgetsList = new ArrayList<Budget>();
 
 		mainScreenListAdapter = new MainScreenListAdapter(context, budgetsList);
+		this.context = context;
 	}
 
 	@Override
@@ -44,17 +52,28 @@ public class MainScreenAddButtonOnClickListener implements OnClickListener {
 			budgetsList.add(new Budget(methodText, amountText));
 			incomeListView.setAdapter(mainScreenListAdapter);
 			mainScreenListAdapter.notifyDataSetChanged();
+
+			// Why not make it a bit more fun?
+			Toast.makeText(this.context, methodText + "\n" + amountText + "$",
+					Toast.LENGTH_SHORT).show();
 			clearFields();
+		} // Checking for errors in input.
+		else if (!checkMethodTextNull && checkAmountTextNull) {
+			incomeMethodInputField.setError("Error in method input.");
+		} else if (!checkAmountTextNull && checkMethodTextNull) {
+			incomeAmountInputField.setError("Error in amount input.");
 		} else {
-			// TODO: Add proper error message to show invalid input.
+			incomeMethodInputField.setError("Error in input.");
+			incomeAmountInputField.setError("Error in input.");
 		}
+
 	}
 
 	private boolean checkValidInput(String methodText, String amountText) {
-		boolean checkIfNullFields = methodText != null || amountText != null;
-		boolean checkEmptyFields = !(methodText.equals("") || amountText
-				.equals(""));
-		boolean isValidInput = checkIfNullFields && checkEmptyFields;
+
+		checkMethodTextNull = (methodText != null) && !(methodText.equals(""));
+		checkAmountTextNull = (amountText != null) && !(amountText.equals(""));
+		boolean isValidInput = checkMethodTextNull && checkAmountTextNull;
 		return isValidInput;
 	}
 

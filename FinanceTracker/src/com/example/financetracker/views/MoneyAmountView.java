@@ -91,6 +91,7 @@ public class MoneyAmountView extends LinearLayout {
 
 		// Get the add button by id and set it a new click listener, registered
 		// with information about the input fields that need to be created.
+
 		initAddButton(context);
 	}
 
@@ -124,5 +125,23 @@ public class MoneyAmountView extends LinearLayout {
 
 		addButton.setOnClickListener(new MainScreenAddButtonOnClickListener(
 				context, incomeListView, methodInputField, amountInputField));
+
+	}
+	
+//	@Overrides
+//	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+//		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+//
+//		ListView incomeListView = (ListView) findViewById(R.id.main_screen_list_view);
+//		//incomeListView.setVerticalScrollBarEnabled(true);
+//		
+//		//setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);
+//	}
+	
+	@Override
+	protected void onLayout(boolean changed, int l, int t, int r, int b) {
+		super.onLayout(changed, l, t, r, b);
+		
+		
 	}
 }

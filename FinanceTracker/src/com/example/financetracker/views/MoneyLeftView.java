@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.financetracker.R;
 
@@ -16,6 +17,8 @@ import com.example.financetracker.R;
  */
 public class MoneyLeftView extends LinearLayout {
 
+	TextView t;
+	
 	/**
 	 * Constructor that is most likely to be called when the view is created in
 	 * an XML file. This constructor will initialize the attributes passed in
@@ -29,6 +32,13 @@ public class MoneyLeftView extends LinearLayout {
 
 		// Initialize the money left view.
 		initMoneyLeftView(context);
+		t = (TextView) findViewById(R.id.money_left_amount);
+		t.setText("133.00");
+		t = (TextView) findViewById(R.id.money_total_amount);
+		t.setText("1348.70");
+		t = (TextView) findViewById(R.id.money_per_day_amount);
+		t.setText("1.3");
+
 	}
 
 	/**

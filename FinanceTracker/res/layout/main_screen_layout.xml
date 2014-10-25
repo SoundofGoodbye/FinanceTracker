@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:moneyAmountView="http://schemas.android.com/apk/res/com.example.financetracker"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <!-- xmlns:moneyAmountView="http://schemas.android.com/apk/res/com.example.financetracker" -->
+
     <TextView
         android:id="@+id/main_screen_income_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_screen_income_label"
-        android:textSize="30sp" />
+        style="@style/MoneyLabelTextViews"
+        android:text="@string/main_screen_income_label" />
 
     <com.example.financetracker.views.MoneyAmountView
         android:id="@+id/income_method_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_below="@id/main_screen_income_label" />
 
     <TextView
         android:id="@+id/main_screen_expenses_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/MoneyLabelTextViews"
         android:layout_below="@id/income_method_layout"
-        android:text="@string/main_screen_expenses_label"
-        android:textSize="30sp" />
+        android:text="@string/main_screen_expenses_label" />
 
     <com.example.financetracker.views.MoneyAmountView
         android:id="@+id/expenses_method_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/main_screen_expenses_label" />
+        android:layout_height="200dp"
+        android:layout_below="@id/main_screen_expenses_label"
+        android:gravity="center_vertical" />
 
     <com.example.financetracker.views.MoneyLeftView
         android:id="@+id/main_screen_money_left_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/expenses_method_layout" />
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
